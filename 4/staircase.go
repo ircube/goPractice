@@ -7,15 +7,17 @@ This is a staircase of size : n = 4
   ##
  ###
 ####
-Its base and height are both equal to . It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
 
-Write a program that prints a staircase of size .
+Its base and height are both equal to n. It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+
+Write a program that prints a staircase of size n.
 
 Function Description
 
 Complete the  function with the following parameter(s):
 
 int n : an integer
+
 Print
 
 Print a staircase as described above. No value should be returned.
@@ -32,6 +34,7 @@ Constraints
 Sample Input
 
 6
+
 Sample Output
 
      #
@@ -40,6 +43,8 @@ Sample Output
   ####
  #####
 ######
+
+
 Explanation
 
 The staircase is right-aligned, composed of # symbols and spaces, and has a height and width of n = 6.
@@ -49,6 +54,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"io"
 	"os"
 	"strconv"
@@ -63,7 +69,19 @@ import (
 
 func staircase(n int32) {
 	// Write your code here
-
+	//-------------------------------------
+	for i := 0; i < int(n); i++ {
+		line := ""
+		for j := 0; j < int(n); j++ {
+			if j < (int(n) - i - 1) {
+				line += " "
+			} else {
+				line += "#"
+			}
+		}
+		fmt.Println(line)
+	}
+	//-------------------------------------
 }
 
 func main() {
